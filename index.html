@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кротовина</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+      onload="renderMathInElement(document.body)"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="Starting-div">
+        <video autoplay loop muted playsinline class="back-video">
+          <source src="/14795250_3840_2160_24fps.mp4" type="video/mp4" />
+        </video>
+
+        <span id="e4mc">x = y²</span>
+        <span id="yx">y = x²</span>
+
+        <h1 class="text-anim">Кротовина як алгебраїчна функція</h1>
+        <p class="text-anim1">Проєкт виконав Горбунов Артемій</p>
+        <a class="text-anim2" href="#wormhole">Розпочати</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="wormhole-is" id="wormhole">
+        <div class="wormhole-is-text">
+          <h1 class="what-is-text to-up-animation">
+            Що таке <span class="what-is-wormhole-text">кротовина</span>?
+          </h1>
+
+          <p class="what-is-p to-up-animation">
+            <span class="what-is-wormhole-text">Кротовина</span> — це
+            гіпотетичний тунель, який може з’єднувати дві віддалені точки у
+            Всесвіті. Уяви аркуш паперу: якщо скласти його навпіл, дві далекі
+            точки опиняться поруч. Кротовина — наче короткий шлях між ними,
+            але замість паперу йдеться про простір-час.
+          </p>
+        </div>
+
+        <img class="to-up-animation" src="3840px-Lorentzian_Wormhole.svg.png" alt="Зображення кротовини" />
+      </div>
+
+      <div class="interstellar-section ">
+        <section class="to-up-animation-two">
+          <h1>Подивімося уривок із фільму «Інтерстеллар»</h1>
+          <video controls preload="metadata">
+            <source src="interstellar.mp4" type="video/mp4" />
+          </video>
+        </section>
+      </div>
+
+      <div class="wormhole-like-function">
+        <section>
+          <h1 class="to-up-animation-three">
+            Розглянемо <span class="what-is-wormhole-text to-up-animation-three" >кротовину</span> як
+            алгебраїчну функцію
+          </h1>
+
+          <p class="what-is-p to-up-animation-three hideAnimation">
+            Для цього можна використати рівняння гіперболи:
+          </p>
+          <p class="what-is-p showAnim">
+            Це рівняння задає гіперболу — криву з двома окремими гілками. Параметри \(a\) і \(b\) впливають на її форму. У графіку можна змінювати їхні значення та спостерігати за результатом. Гіпербола тут є математичною ілюстрацією, а не точною моделлю кротовини.
+          </p>
+
+          <div class="formula to-up-animation-three hideAnimation">
+            $$\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1$$
+          </div>
+          <button class="next-btn">Далі</button>
+        </section>
+        <div class="graph-container to-up-animation-three">
+          <div id="desmos-graph"></div>
+        </div>
+        
+      </div>
+    </main>
+
+    <footer>
+      <div class="i-apricciate-for-you">
+        <h1>Дякую за увагу!</h1>
+      </div>
+    </footer>
+
+    <script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=13569ded6e16455a8ace7f4fc4ef736a"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

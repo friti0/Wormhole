@@ -1,113 +1,127 @@
 <!doctype html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Кротовина</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090d">
+  <meta name="description" content="Навчальний проєкт про кротовини та застосування квадратичної функції.">
+  <title>Кротовина — математика простору</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+</head>
+<body>
+  <header class="hero">
+    <video class="hero-video" autoplay loop muted playsinline>
+      <source src="https://res.cloudinary.com/csn11fu2/video/upload/v1795685147/14795250_3840_2160_24fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-shade"></div>
+    <nav class="topbar"><a class="brand" href="#">W<span>/</span>H</a><span class="topbar-note">АЛГЕБРА · КОСМОС · МОДЕЛЮВАННЯ</span></nav>
+    <div class="hero-content">
+      <p class="eyebrow">НАВЧАЛЬНИЙ ПРОЄКТ · АЛГЕБРА</p>
+      <h1>Кротовина<br><span>як математична модель</span></h1>
+      <p class="hero-description">Як за допомогою квадратичної функції описати форму умовного входу?</p>
+      <a class="primary-link" href="#about">Дослідити проєкт <span>↘</span></a>
+    </div>
+    <div class="hero-equation equation-one">y = ax² + bx + c</div>
+    <div class="hero-equation equation-two">f(x) → ∞</div>
+    <div class="hero-bottom"><span>01 / ДОСЛІДЖЕННЯ</span><span>ПРОЄКТ ГОРБУНОВА АРТЕМІЯ</span></div>
+  </header>
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
-    ></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
-      onload="renderMathInElement(document.body)"
-    ></script>
-  </head>
-
-  <body>
-    <header>
-      <div class="Starting-div">
-        <video autoplay loop muted playsinline class="back-video">
-          <source src="https://res.cloudinary.com/csn11fu2/video/upload/v1795685147/14795250_3840_2160_24fps.mp4" type="video/mp4" />
-        </video>
-
-        <span id="e4mc">x = y²</span>
-        <span id="yx">y = x²</span>
-
-        <h1 class="text-anim">Кротовина як алгебраїчна функція</h1>
-        <p class="text-anim1">Проєкт виконав Горбунов Артемій</p>
-        <a class="text-anim2" href="#wormhole">Розпочати</a>
-      </div>
-    </header>
-
-    <main>
-      <div class="wormhole-is" id="wormhole">
-        <div class="wormhole-is-text">
-          <h1 class="what-is-text to-up-animation">
-            Що таке <span class="what-is-wormhole-text">кротовина</span>?
-          </h1>
-
-          <p class="what-is-p to-up-animation">
-            <span class="what-is-wormhole-text">Кротовина</span> — це
-            гіпотетичний тунель, який може з’єднувати дві віддалені точки у
-            Всесвіті. Уяви аркуш паперу: якщо скласти його навпіл, дві далекі
-            точки опиняться поруч. Кротовина — наче короткий шлях між ними,
-            але замість паперу йдеться про простір-час.
-          </p>
+  <main>
+    <section class="section intro" id="about">
+      <div class="section-index">01 — КОНТЕКСТ</div>
+      <div class="intro-grid">
+        <div>
+          <p class="eyebrow">ЩО ЦЕ ТАКЕ?</p>
+          <h2>Подорож<br>крізь <em>простір-час</em></h2>
         </div>
-
-        <img class="to-up-animation" src="3840px-Lorentzian_Wormhole.svg.png" alt="Зображення кротовини" />
-      </div>
-
-      <div class="interstellar-section ">
-        <section class="to-up-animation-two">
-          <h1>Подивімося уривок із фільму «Інтерстеллар»</h1>
-          <video controls preload="metadata">
-            <source src="https://res.cloudinary.com/csn11fu2/video/upload/v1795685159/interstellar.mp4" type="video/mp4" />
-          </video>
-        </section>
-      </div>
-
-      <div class="wormhole-like-function">
-        <section>
-          <h1 class="to-up-animation-three">
-            Розглянемо <span class="what-is-wormhole-text to-up-animation-three" >кротовину</span> як
-            алгебраїчну функцію
-          </h1>
-
-          <p class="what-is-p to-up-animation-three hideAnimation">
-            Для цього можна використати рівняння гіперболи:
-          </p>
-          <p class="what-is-p showAnim">
-            Це рівняння задає гіперболу — криву з двома окремими гілками. Параметри \(a\) і \(b\) впливають на її форму. У графіку можна змінювати їхні значення та спостерігати за результатом. Гіпербола тут є математичною ілюстрацією, а не точною моделлю кротовини.
-          </p>
-
-          <div class="formula to-up-animation-three hideAnimation">
-            $$\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1$$
-          </div>
-          <button class="next-btn">Далі</button>
-        </section>
-        <div class="graph-container to-up-animation-three">
-          <div id="desmos-graph"></div>
+        <div class="intro-copy">
+          <p><strong>Кротовина</strong> — це гіпотетичний тунель у просторі-часі, який теоретично міг би з’єднувати дві віддалені області Всесвіту.</p>
+          <p>Уявімо аркуш паперу: якщо зігнути його, дві далекі точки опиняться поруч. Ця аналогія допомагає уявити ідею короткого шляху крізь простір.</p>
+          <p class="muted">Існування прохідних кротовин не підтверджене спостереженнями. У цьому проєкті ми створюємо навчальну математичну модель, а не точний фізичний опис такого об’єкта.</p>
         </div>
-        
       </div>
-    </main>
-
-    <footer>
-      <div class="i-apricciate-for-you">
-        <h1>Дякую за увагу!</h1>
+      <div class="wormhole-image-wrap">
+        <img src="3840px-Lorentzian_Wormhole.svg.png" alt="Схематичне зображення кротовини">
+        <span>СХЕМАТИЧНА ІЛЮСТРАЦІЯ КРотовИНИ</span>
       </div>
-    </footer>
-    
-    <!-- Desmos -->
-    <script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=13569ded6e16455a8ace7f4fc4ef736a"></script>
+    </section>
 
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <section class="cinema">
+      <div class="cinema-copy">
+        <p class="eyebrow">КОСМОС У КІНО</p>
+        <h2>Уявити<br>неймовірне</h2>
+        <p>У фільмі «Інтерстеллар» кротовина стає способом подорожувати між віддаленими областями космосу. Кіно допомагає візуалізувати складну наукову ідею.</p>
+      </div>
+      <video controls preload="metadata" poster="3840px-Lorentzian_Wormhole.svg.png">
+        <source src="https://res.cloudinary.com/csn11fu2/video/upload/v1795685159/interstellar.mp4" type="video/mp4">
+        Ваш браузер не підтримує відтворення відео.
+      </video>
+    </section>
 
-    <!-- ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <section class="section problem" id="problem">
+      <div class="section-index">02 — МАТЕМАТИЧНА ЗАДАЧА</div>
+      <p class="eyebrow">ВІД ІДЕЇ ДО ОБЧИСЛЕНЬ</p>
+      <h2>Побудуємо<br><em>параболічний вхід</em></h2>
+      <div class="problem-layout">
+        <div class="problem-text">
+          <p>Уявімо, що потрібно спроєктувати умовний симетричний вхід у тунель у формі параболічної арки.</p>
+          <div class="parameter"><span>Ширина входу</span><strong>4 м</strong></div>
+          <div class="parameter"><span>Висота входу</span><strong>3 м</strong></div>
+          <div class="parameter"><span>Центр входу</span><strong>(0; 3)</strong></div>
+          <p class="muted small">Це умовна геометрична задача. Парабола використовується як зручна модель арки, а не як доведена форма справжньої кротовини.</p>
+        </div>
+        <div class="goal-card">
+          <span class="goal-label">ПОТРІБНО ЗНАЙТИ</span>
+          <div class="goal-symbol">?</div>
+          <h3>Квадратичну функцію</h3>
+          <p>Рівняння параболи, яка проходить через задані точки та має потрібну висоту й ширину.</p>
+        </div>
+      </div>
+    </section>
 
-    <!-- Your JavaScript -->
-    <script src="./script.js"></script>
+    <section class="section solution">
+      <div class="section-index">03 — РОЗВ’ЯЗАННЯ</div>
+      <p class="eyebrow">КРОК ЗА КРОКОМ</p>
+      <h2>Знаходимо<br><em>рівняння</em></h2>
+      <div class="steps">
+        <article class="step"><span>КРОК 01</span><h3>Записуємо загальний вигляд</h3><div class="formula">\(y=ax^2+bx+c\)</div><p>Оскільки парабола симетрична відносно осі \(Oy\), коефіцієнт \(b=0\). Вершина має координати \((0;3)\), тому \(c=3\).</p></article>
+        <article class="step"><span>КРОК 02</span><h3>Підставляємо точку перетину</h3><div class="formula">\(y=ax^2+3\)</div><p>Ширина дорівнює 4 м, отже точки перетину з віссю \(Ox\): \((-2;0)\) та \((2;0)\). Підставимо точку \((2;0)\).</p><div class="calculation">\(0=a\cdot 2^2+3\)<br>\(0=4a+3\)<br>\(4a=-3\)<br>\(a=-\frac{3}{4}=-0.75\)</div></article>
+        <article class="step result-step"><span>КРОК 03</span><h3>Отримуємо результат</h3><div class="final-equation">\( \boxed{y=-0.75x^2+3} \)</div><p>Це шукане рівняння параболи для заданих параметрів.</p></article>
+      </div>
+    </section>
+
+    <section class="graph-section">
+      <div class="section-index">04 — ГРАФІЧНА ПЕРЕВІРКА</div>
+      <div class="graph-heading"><div><p class="eyebrow">ПОДИВІМОСЯ НА ГРАФІК</p><h2>Форма<br><em>моделі</em></h2></div><p>Парабола проходить через точки \((-2;0)\), \((0;3)\) та \((2;0)\). Графік можна масштабувати й досліджувати.</p></div>
+      <div class="graph-frame"><div id="desmos-graph" aria-label="Графік квадратичної функції"></div></div>
+      <div class="graph-caption"><span>ФУНКЦІЯ: y = −0.75x² + 3</span><span>ОБЛАСТЬ: −2 ≤ x ≤ 2</span></div>
+    </section>
+
+    <section class="section conclusion">
+      <div class="section-index">05 — ВИСНОВОК</div>
+      <p class="eyebrow">ЩО МИ ДІЗНАЛИСЯ?</p>
+      <h2>Математика<br><em>дає форму ідеям</em></h2>
+      <p class="conclusion-lead">За допомогою квадратичної функції ми побудували модель параболічної арки з шириною 4 метри та висотою 3 метри.</p>
+      <div class="conclusion-grid">
+        <div><span>01</span><strong>3 м</strong><small>максимальна висота</small></div>
+        <div><span>02</span><strong>4 м</strong><small>ширина моделі</small></div>
+        <div><span>03</span><strong>−0.75</strong><small>коефіцієнт \(a\)</small></div>
+      </div>
+      <p class="muted small">Отже, квадратична функція допомогла розв’язати задачу та перевірити результат за допомогою графіка. Це приклад застосування алгебри для створення математичних моделей.</p>
+    </section>
+  </main>
+
+  <footer><div class="footer-mark">W<span>/</span>H</div><div><strong>Дякую за увагу!</strong><p>Проєкт виконав Горбунов Артемій</p></div><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">НА ПОЧАТОК ↑</a></footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+  <script defer src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=13569ded6e16455a8ace7f4fc4ef736a"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="script.js"></script>
 </body>
 </html>
-

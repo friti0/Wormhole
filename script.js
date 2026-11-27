@@ -1,137 +1,59 @@
-
-
-gsap.registerPlugin(ScrollTrigger);
-
-const xy = document.getElementById("e4mc");
-const yx = document.getElementById("yx");
-
-// Рух формул за курсором
-document.addEventListener("mousemove", (event) => {
-  const x = event.clientX - window.innerWidth / 2;
-  const y = event.clientY - window.innerHeight / 2;
-
-  gsap.to(xy, {
-    x,
-    y,
-    duration: 1,
-    ease: "power2.out",
-    overwrite: "auto",
-  });
-
-  gsap.to(yx, {
-    x,
-    y,
-    duration: 2,
-    ease: "power2.out",
-    overwrite: "auto",
-  });
-});
-
-// Анімація заголовка та тексту
-gsap.from(".text-anim", {
-  y: 50,
-  opacity: 0,
-  duration: 1,
-});
-
-gsap.from(".text-anim1", {
-  y: -50,
-  opacity: 0,
-  duration: 1,
-});
-
-// Анімація під час прокручування сторінки
-gsap.from(".to-up-animation", {
-  scrollTrigger: {
-    toggleActions: "play none none none",
-    start: "top center",
-    end: "top 100px",
-    scrub: 1,
-    trigger: ".wormhole-is",
-  },
-  y: 100,
-  opacity: 0,
-  ease: "power4.out",
-  duration: 5,
-});
-
-gsap.from(".to-up-animation-two", {
-  scrollTrigger: {
-    toggleActions: "play none none none",
-    start: "top center",
-    end: "top 100px",
-    scrub: 1,
-    trigger: ".interstellar-section",
-  },
-  y: 100,
-  rotate: 100,
-  opacity: 0,
-  ease: "power4.out",
-  duration: 5,
-});
-gsap.from(".to-up-animation-three", {
-  scrollTrigger: {
-    toggleActions: "play none none none",
-    start: "top center",
-    end: "top 100px",
-    scrub: 1,
-    trigger: ".wormhole-like-function",
-  },
-  x: 100,
-  opacity: 0,
-  ease: "power4.out",
-  duration: 5,
-});
-
-// Інтерактивний графік Desmos
-const graphElement = document.getElementById("desmos-graph");
-
-if (graphElement && window.Desmos) {
-  const calculator = Desmos.GraphingCalculator(graphElement, {
-    expressions: true,
-    settingsMenu: true,
-    zoomButtons: true,
-    showResetButtonOnGraphpaper: true,
-  });
-
-  calculator.setMathBounds({
-    left: -10,
-    right: 10,
-    bottom: -10,
-    top: 10,
-  });
-
-  calculator.setExpressions([
-    { id: "hyperbola", latex: "x^2/a^2-y^2/b^2=1" },
-    { id: "a", latex: "a=1.1" },
-    { id: "b", latex: "b=1.1" },
-  ]);
-}
-
-const nextBtn = document.querySelector(".next-btn");
-
-nextBtn.addEventListener("click", () => {
-  gsap.to(".hideAnimation",{
-    opacity: 0,
-    y: -300,
-  }),
-  
-    gsap.fromTo(
-    ".showAnim",
-    {
-    autoAlpha:0,
-    y: 300,
-    display:"none",
-  },
-  {
-    autoAlpha:1,
-    y:0,
-    text:'Це рівняння задає гіперболу — криву з двома окремими гілками. Параметри \(a\) і \(b\) впливають на її форму. У графіку можна змінювати їхні значення та спостерігати за результатом. Гіпербола тут є математичною ілюстрацією, а не точною моделлю кротовини.',
-    display:'block',
-    duration: 3,
-    ease:'power4.inOut',
+document.addEventListener("DOMContentLoaded", () => {
+  // Render mathematical notation after KaTeX has loaded.
+  if (window.renderMathInElement) {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+      throwOnError: false
+    });
   }
-)
-  
 
+  // Interactive graph of the quadratic model.
+  const graphElement = document.getElementById("desmos-graph");
+  if (graphElement && window.Desmos) {
+    const calculator = Desmos.GraphingCalculator(graphElement, {
+      expressions: true,
+      settingsMenu: true,
+      zoomButtons: true,
+      showResetButtonOnGraphpaper: true,
+      expressionsTopbar: false,
+      xAxisLabel: "Ширина (м)",
+      yAxisLabel: "Висота (м)"
+    });
+
+    calculator.setMathBounds({
+      left: -3.2,
+      right: 3.2,
+      bottom: -1,
+      top: 4
+    });
+
+    calculator.setExpressions([
+      { id: "parabola", latex: "y=-0.75x^2+3\\left\\{-2<=x<=2\\right\\}", color: "#d98232", lineWidth: 4 },
+      { id: "vertex", latex: "(0,3)", color: "#c45d20", showLabel: true, label: "Вершина (0; 3)", labelSize: "medium" },
+      { id: "left", latex: "(-2,0)", color: "#c45d20", showLabel: true, label: "(-2; 0)", labelSize: "medium" },
+      { id: "right", latex: "(2,0)", color: "#c45d20", showLabel: true, label: "(2; 0)", labelSize: "medium" },
+      { id: "axis", latex: "x=0", color: "#999999", lineStyle: Desmos.Styles.DASHED }
+    ]);
+  } else if (graphElement) {
+    graphElement.innerHTML = '<div class="graph-fallback"><strong>y = −0.75x² + 3</strong><p>Вершина: (0; 3) · Точки перетину: (−2; 0) та (2; 0)</p></div>';
+  }
+
+  // Optional scroll animations; the page remains readable if GSAP is unavailable.
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".section, .cinema, .graph-section").forEach((section) => {
+      gsap.from(section.children, {
+        y: 24,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.08,
+        ease: "power2.out",
+        scrollTrigger: { trigger: section, start: "top 82%", once: true }
+      });
+    });
+  }
 });

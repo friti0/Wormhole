@@ -13,12 +13,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
 </head>
 <body>
-  <header class="hero">
+  <header class="hero" id="top">
     <video class="hero-video" autoplay loop muted playsinline>
       <source src="https://res.cloudinary.com/csn11fu2/video/upload/v1795685147/14795250_3840_2160_24fps.mp4" type="video/mp4">
     </video>
     <div class="hero-shade"></div>
-    <nav class="topbar"><a class="brand" href="#">W<span>/</span>H</a><span class="topbar-note">АЛГЕБРА · КОСМОС · МОДЕЛЮВАННЯ</span></nav>
+    <nav class="topbar"><a class="brand" href="#top">W<span>/</span>H</a><span class="topbar-note">АЛГЕБРА · КОСМОС · МОДЕЛЮВАННЯ</span></nav>
     <div class="hero-content">
       <p class="eyebrow">НАВЧАЛЬНИЙ ПРОЄКТ · АЛГЕБРА</p>
       <h1>Кротовина<br><span>як математична модель</span></h1>
@@ -46,7 +46,7 @@
       </div>
       <div class="wormhole-image-wrap">
         <img src="3840px-Lorentzian_Wormhole.svg.png" alt="Схематичне зображення кротовини">
-        <span>СХЕМАТИЧНА ІЛЮСТРАЦІЯ КРотовИНИ</span>
+        <span>СХЕМАТИЧНА ІЛЮСТРАЦІЯ КРОТОВИНИ</span>
       </div>
     </section>
 
@@ -68,17 +68,17 @@
       <h2>Побудуємо<br><em>параболічний вхід</em></h2>
       <div class="problem-layout">
         <div class="problem-text">
-          <p>Уявімо, що потрібно спроєктувати умовний симетричний вхід у тунель у формі параболічної арки.</p>
+          <p>Уявімо, що потрібно спроєктувати умовний симетричний вхід у тунель у формі параболічної арки. Ширина входу — 4 м, а висота — 3 м. Потрібно скласти формулу параболи та знайти висоту арки на відстані 1 м від її центру.</p>
           <div class="parameter"><span>Ширина входу</span><strong>4 м</strong></div>
           <div class="parameter"><span>Висота входу</span><strong>3 м</strong></div>
-          <div class="parameter"><span>Центр входу</span><strong>(0; 3)</strong></div>
+          <div class="parameter"><span>Вершина параболи</span><strong>(0; 3)</strong></div>
           <p class="muted small">Це умовна геометрична задача. Парабола використовується як зручна модель арки, а не як доведена форма справжньої кротовини.</p>
         </div>
         <div class="goal-card">
           <span class="goal-label">ПОТРІБНО ЗНАЙТИ</span>
           <div class="goal-symbol">?</div>
           <h3>Квадратичну функцію</h3>
-          <p>Рівняння параболи, яка проходить через задані точки та має потрібну висоту й ширину.</p>
+          <p>Скласти рівняння параболи та визначити висоту арки на відстані 1 м від центру.</p>
         </div>
       </div>
     </section>
@@ -88,15 +88,48 @@
       <p class="eyebrow">КРОК ЗА КРОКОМ</p>
       <h2>Знаходимо<br><em>рівняння</em></h2>
       <div class="steps">
-        <article class="step"><span>КРОК 01</span><h3>Записуємо загальний вигляд</h3><div class="formula">\(y=ax^2+bx+c\)</div><p>Оскільки парабола симетрична відносно осі \(Oy\), коефіцієнт \(b=0\). Вершина має координати \((0;3)\), тому \(c=3\).</p></article>
-        <article class="step"><span>КРОК 02</span><h3>Підставляємо точку перетину</h3><div class="formula">\(y=ax^2+3\)</div><p>Ширина дорівнює 4 м, отже точки перетину з віссю \(Ox\): \((-2;0)\) та \((2;0)\). Підставимо точку \((2;0)\).</p><div class="calculation">\(0=a\cdot 2^2+3\)<br>\(0=4a+3\)<br>\(4a=-3\)<br>\(a=-\frac{3}{4}=-0.75\)</div></article>
-        <article class="step result-step"><span>КРОК 03</span><h3>Отримуємо результат</h3><div class="final-equation">\( \boxed{y=-0.75x^2+3} \)</div><p>Це шукане рівняння параболи для заданих параметрів.</p></article>
+        <article class="step">
+          <span>КРОК 01</span>
+          <h3>Записуємо загальний вигляд</h3>
+          <div class="formula">\(y=ax^2+bx+c\)</div>
+          <p>Оскільки парабола симетрична відносно осі \(Oy\), коефіцієнт \(b=0\). Вершина має координати \((0;3)\), тому \(c=3\).</p>
+        </article>
+        <article class="step">
+          <span>КРОК 02</span>
+          <h3>Підставляємо точку перетину</h3>
+          <div class="formula">\(y=ax^2+3\)</div>
+          <p>Ширина входу — 4 м, тому від центра до кожного краю — 2 м. Точки перетину з віссю \(Ox\): \((-2;0)\) та \((2;0)\). Підставимо точку \((2;0)\).</p>
+          <div class="calculation">
+            \(0=a\cdot 2^2+3\)<br>
+            \(0=4a+3\)<br>
+            \(4a=-3\)<br>
+            \(a=-\frac{3}{4}=-0.75\)
+          </div>
+        </article>
+        <article class="step result-step">
+          <span>КРОК 03</span>
+          <h3>Отримуємо результат</h3>
+          <div class="final-equation">\(\boxed{y=-0.75x^2+3}\)</div>
+          <p>Це шукане рівняння параболи для заданих параметрів.</p>
+        </article>
+      </div>
+
+      <div class="application-check">
+        <span class="goal-label">ЗАСТОСУЄМО ЗНАЙДЕНУ ФУНКЦІЮ</span>
+        <h3>Якою буде висота арки на відстані 1 м від центру?</h3>
+        <p>Підставимо \(x=1\) у знайдену функцію:</p>
+        <div class="application-formula">\(y=-0.75\cdot1^2+3\)</div>
+        <div class="application-formula">\(y=-0.75+3=2.25\)</div>
+        <p class="application-answer">Відповідь: <strong>2,25 м</strong>.</p>
       </div>
     </section>
 
     <section class="graph-section">
       <div class="section-index">04 — ГРАФІЧНА ПЕРЕВІРКА</div>
-      <div class="graph-heading"><div><p class="eyebrow">ПОДИВІМОСЯ НА ГРАФІК</p><h2>Форма<br><em>моделі</em></h2></div><p>Парабола проходить через точки \((-2;0)\), \((0;3)\) та \((2;0)\). Графік можна масштабувати й досліджувати.</p></div>
+      <div class="graph-heading">
+        <div><p class="eyebrow">ПОДИВІМОСЯ НА ГРАФІК</p><h2>Форма<br><em>моделі</em></h2></div>
+        <p>Парабола проходить через точки \((-2;0)\), \((0;3)\) та \((2;0)\). На графіку також позначено точку \((1;2,25)\), яку ми отримали під час розв’язання задачі.</p>
+      </div>
       <div class="graph-frame"><div id="desmos-graph" aria-label="Графік квадратичної функції"></div></div>
       <div class="graph-caption"><span>ФУНКЦІЯ: y = −0.75x² + 3</span><span>ОБЛАСТЬ: −2 ≤ x ≤ 2</span></div>
     </section>
@@ -109,13 +142,17 @@
       <div class="conclusion-grid">
         <div><span>01</span><strong>3 м</strong><small>максимальна висота</small></div>
         <div><span>02</span><strong>4 м</strong><small>ширина моделі</small></div>
-        <div><span>03</span><strong>−0.75</strong><small>коефіцієнт \(a\)</small></div>
+        <div><span>03</span><strong>2,25 м</strong><small>висота при x = 1</small></div>
       </div>
       <p class="muted small">Отже, квадратична функція допомогла розв’язати задачу та перевірити результат за допомогою графіка. Це приклад застосування алгебри для створення математичних моделей.</p>
     </section>
   </main>
 
-  <footer><div class="footer-mark">W<span>/</span>H</div><div><strong>Дякую за увагу!</strong><p>Проєкт виконав Горбунов Артемій</p></div><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">НА ПОЧАТОК ↑</a></footer>
+  <footer>
+    <div class="footer-mark">W<span>/</span>H</div>
+    <div><strong>Дякую за увагу!</strong><p>Проєкт виконав Горбунов Артемій</p></div>
+    <a href="#top">НА ПОЧАТОК ↑</a>
+  </footer>
 
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>

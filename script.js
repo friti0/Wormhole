@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Render mathematical notation after KaTeX has loaded.
+  // Відображення математичних формул за допомогою KaTeX.
   if (window.renderMathInElement) {
     renderMathInElement(document.body, {
       delimiters: [
@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Interactive graph of the quadratic model.
+  // Інтерактивний графік квадратичної функції.
   const graphElement = document.getElementById("desmos-graph");
+
   if (graphElement && window.Desmos) {
     const calculator = Desmos.GraphingCalculator(graphElement, {
       expressions: true,
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       zoomButtons: true,
       showResetButtonOnGraphpaper: true,
       expressionsTopbar: false,
-      xAxisLabel: "Ширина (м)",
+      xAxisLabel: "Відстань від центру (м)",
       yAxisLabel: "Висота (м)"
     });
 
@@ -32,19 +33,60 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     calculator.setExpressions([
-      { id: "parabola", latex: "y=-0.75x^2+3\\left\\{-2<=x<=2\\right\\}", color: "#d98232", lineWidth: 4 },
-      { id: "vertex", latex: "(0,3)", color: "#c45d20", showLabel: true, label: "Вершина (0; 3)", labelSize: "medium" },
-      { id: "left", latex: "(-2,0)", color: "#c45d20", showLabel: true, label: "(-2; 0)", labelSize: "medium" },
-      { id: "right", latex: "(2,0)", color: "#c45d20", showLabel: true, label: "(2; 0)", labelSize: "medium" },
-      { id: "axis", latex: "x=0", color: "#999999", lineStyle: Desmos.Styles.DASHED }
+      {
+        id: "parabola",
+        latex: "y=-0.75x^2+3\\left\\{-2<=x<=2\\right\\}",
+        color: "#d98232",
+        lineWidth: 4
+      },
+      {
+        id: "vertex",
+        latex: "(0,3)",
+        color: "#c45d20",
+        showLabel: true,
+        label: "Вершина (0; 3)",
+        labelSize: "medium"
+      },
+      {
+        id: "left",
+        latex: "(-2,0)",
+        color: "#c45d20",
+        showLabel: true,
+        label: "(-2; 0)",
+        labelSize: "medium"
+      },
+      {
+        id: "right",
+        latex: "(2,0)",
+        color: "#c45d20",
+        showLabel: true,
+        label: "(2; 0)",
+        labelSize: "medium"
+      },
+      {
+        id: "application",
+        latex: "(1,2.25)",
+        color: "#2b8a70",
+        showLabel: true,
+        label: "(1; 2,25)",
+        labelSize: "medium"
+      },
+      {
+        id: "axis",
+        latex: "x=0",
+        color: "#999999",
+        lineStyle: Desmos.Styles.DASHED
+      }
     ]);
   } else if (graphElement) {
-    graphElement.innerHTML = '<div class="graph-fallback"><strong>y = −0.75x² + 3</strong><p>Вершина: (0; 3) · Точки перетину: (−2; 0) та (2; 0)</p></div>';
+    graphElement.innerHTML =
+      '<div class="graph-fallback"><strong>y = −0.75x² + 3</strong><p>Вершина: (0; 3) · Точки перетину: (−2; 0) та (2; 0) · При x = 1: y = 2,25</p></div>';
   }
 
-  // Optional scroll animations; the page remains readable if GSAP is unavailable.
+  // Анімації появи блоків під час прокручування.
   if (window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
+
     gsap.utils.toArray(".section, .cinema, .graph-section").forEach((section) => {
       gsap.from(section.children, {
         y: 24,
@@ -52,7 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 0.7,
         stagger: 0.08,
         ease: "power2.out",
-        scrollTrigger: { trigger: section, start: "top 82%", once: true }
+        scrollTrigger: {
+          trigger: section,
+          start: "top 82%",
+          once: true
+        }
       });
     });
   }
